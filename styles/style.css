@@ -1,6 +1,7 @@
 .page {
   font-family: 'IBM Plex mono', sans-serif;
   background-color: var(--bg-color);
+  background-attachment: fixed;
 }
 /* Хорошая новость — размерами неявных треков тоже можно управлять. Для этого существуют 
 свойства grid-auto-rows — для неявных строк и grid-auto-columns — для неявных столбцов. 
@@ -291,8 +292,8 @@
   
   .section-image {
     display: grid;
-    grid-template-columns: repeat(3, auto); 
-    grid-template-rows: repeat(3, auto); 
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
     gap: 20px;
     margin-top: 10px;
     padding-inline-start: 10px;
@@ -387,7 +388,7 @@
   }
 
   .section-image {
-    grid-template-columns: repeat(3, auto); 
+    grid-template-columns: repeat(3, auto);
   }
 
   .footer {
