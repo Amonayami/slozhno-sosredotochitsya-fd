@@ -1,7 +1,7 @@
 
 :root.theme-dark {
   --bg-header-image: url(../images/cover-image-dark.png);
-  --bg-dark-color: #000028;
+  --bg-color: #000028;
   --title-color: #db00ff;
   --fuchsia-color: #ff0070;
   --font-subject-color: #ff0070;
