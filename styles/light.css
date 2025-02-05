@@ -25,13 +25,9 @@
     --font-text-color: #353430;
     --decorated-zone-color: #353430;
     --menu-button-color: #353430;
-  
+
     .rec-indicator {
       display: none;
     }  
-
-    .header__theme-menu-button_active {
-      pointer-events: none;
-    }
   }
 }

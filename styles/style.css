@@ -1,6 +1,6 @@
 .page {
   font-family: "IBM Plex mono", sans-serif;
-  /* background-image: var(--bg-image); */
+  background-image: var(--bg-header-image);
   background-color: var(--bg-color, #000028);
   background-repeat: no-repeat;
   background-position: center;
@@ -16,7 +16,6 @@
   align-items: center;
   min-block-size: 668px;
   block-size: 100vh;
-  background-image: var(--bg-header-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -24,6 +23,27 @@
   padding-block-end: 10px;
   padding-inline-start: 10px;
   padding-inline-end: 10px;
+}
+
+.title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: bold;
+  text-shadow: 4px 4px 0 var(--fuchsia-color, #ff0070);
+  color: var(--title-color);
+  line-height: 82.5%;
+}
+
+.paragraph {
+  max-inline-size: 355px;
+  inline-size: 100%;
+  block-size: fit-content;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--font-subtitle-color, #000028);
+}
+
+.title-decor {
+  background-color: var(--fuchsia-color, #ff0070);
 }
 
 .decorated-zone::before {
@@ -88,10 +108,12 @@
   background-color: transparent;
   border: none;
   color: var(--menu-button-color, #ff0070);
+  transition: outline-color 1s ease;
 }
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--menu-button-color, #ff0070);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
@@ -102,26 +124,6 @@
 .header__theme-menu-button:focus-visible {
   outline: none;
   border-block-end: 1px solid var(--menu-button-color, #ff0070);
-}
-
-.title {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  font-weight: bold;
-  text-shadow: 4px 4px 0 var(--fuchsia-color, #ff0070);
-  color: var(--title-color);
-  line-height: 82.5%;
-}
-
-.paragraph {
-  min-inline-size: 355px;
-  block-size: fit-content;
-  font-weight: bold;
-  font-size: 18px;
-  color: var(--font-subtitle-color, #000028);
-}
-
-.title-decor {
-  background-color: var(--fuchsia-color, #ff0070);
 }
 
 .main {
@@ -154,8 +156,8 @@
   margin-block-start: 10px;
 }
 
-.special-margin {
-  margin-block-start: 52px;
+.normal-text {
+  font-weight: normal;
 }
 
 .link {
@@ -164,11 +166,15 @@
 }
 
 .link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--font-text-color, #f1b2ce);
 }
 
 .link:focus-visible {
   outline: 1px solid var(--font-text-color, #f1b2ce);
+}
+
+.special-margin {
+  margin-block-start: 52px;
 }
 
 .section-image {
@@ -190,6 +196,7 @@
   justify-content: center;
   align-items: center;
   min-block-size: 668px;
+  block-size: 100vh;
   padding-block-start: 10px;
   padding-block-end: 10px;
   padding-inline-start: 10px;
@@ -201,7 +208,6 @@
 
 @media (width >= 768px) {
   .header {
-    min-block-size: 1024px;
     padding-inline-start: 0;
     padding-inline-end: 20px;
     padding-block-start: 15px;
@@ -229,7 +235,8 @@
 
   .paragraph {
     margin-block-end: 10px;
-    inline-size: 364px;
+    max-inline-size: 364px;
+    inline-size: 100%;
     justify-self: end;
   }
 
@@ -251,7 +258,8 @@
 
   .subject {
     margin-block-start: 20px;
-    inline-size: 236px;
+    max-inline-size: 236px;
+    inline-size: 100%;
   }
 
   .special-margin {
@@ -291,13 +299,11 @@
 
   .footer {
     margin-block-start: 40px;
-    min-block-size: 1024px;
   }
 }
 
 @media (width >= 1024px) {
   .header {
-    min-block-size: 768px;
     align-items: start;
   }
 
@@ -318,7 +324,8 @@
 
   .paragraph {
     margin-block-start: 112px;
-    inline-size: 491px;
+    max-inline-size: 491px;
+    inline-size: 100%;
   }
 
   .section {
@@ -326,24 +333,20 @@
   }
 
   .subject {
-    inline-size: 315px;
+    max-inline-size: 315px;
+    inline-size: 100%;
   }
 
   .grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
     column-gap: 20px;
   }
 
-  .wrap {
-    grid-row: 2;
+  .section.grid > h2 {
+    grid-column: 1 / -1;
   }
 
   .section-image {
     grid-template-columns: repeat(3, auto);
-  }
-
-  .footer {
-    min-block-size: 768px;
   }
 }

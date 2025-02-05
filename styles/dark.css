@@ -9,6 +9,10 @@
   --font-text-color: #f1b2ce;
   --decorated-zone-color: #ff0070;
   --menu-button-color: #ff0070;
+
+  .rec-indicator {
+    display: initial;
+  }
 }
 
 
