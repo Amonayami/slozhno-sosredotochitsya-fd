@@ -1,6 +1,6 @@
 .page {
   font-family: "IBM Plex mono", sans-serif;
-  background-image: var(--bg-image);
+  /* background-image: var(--bg-image); */
   background-color: var(--bg-color, #000028);
   background-repeat: no-repeat;
   background-position: center;
